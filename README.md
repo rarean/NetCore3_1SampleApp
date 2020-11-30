@@ -12,3 +12,9 @@ Blog Post(s):
 
 ## How To Use
 Download the zip file, open up in Visual Studio, clean, restore packages, build and run.
+
+### Docker
+1) Download or clone repo
+2) From command line at root of project where Dockerfile is `docker build . -t local/NetCore3_1SampleApp`
+3) From command line docker run -it -p 80:80 local/NetCore3_1SampleApp
+4) Open browser to http://localhost:80
