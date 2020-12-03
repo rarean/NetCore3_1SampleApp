@@ -16,11 +16,11 @@ apt-get -y install apache2
 
 #download/build/publish .net core 3.1 app to apache folder and copy .conf to apache available site list
 COPY NetCore3_1SampleApp/ANetCoreSampleApplication.conf /etc/apache2/sites-available/
-COPY NetCore3_1SampleApp/ /build/
-RUN cd /build && \
-dotnet restore && \
-dotnet build && \
-dotnet publish -c Release -o /var/ANetCoreSampleApplication -r win-x64 --self-contained false
+COPY Release/ /var/ANetCoreSampleApplication
+#RUN cd /build && \
+#dotnet restore && \
+#dotnet build && \
+#dotnet publish -c Release -o /var/ANetCoreSampleApplication -r win-x64 --self-contained false
 
 #create some directories for environment variables (set in environment above)
 RUN mkdir -p $APACHE_RUN_DIR
